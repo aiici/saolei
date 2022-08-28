@@ -1,0 +1,51 @@
+<!--main.wxml-->
+
+<view class="page-container">
+  <image class="bg-img"style="height: 100%;" mode="scaleToFill"></image>
+
+  <view class="container">
+
+    <view class="btn-inline">
+      <button bind:tap="turnOver" class="btn btn-turnover {{isTurning ? 'btn-active' : ''}}" style="width:170rpx;font-size:28rpx;">翻开</button>
+      <button bind:tap="toggleMark" class="btn btn-mark {{isTurning ? '' : 'btn-active'}}" style="width:170rpx;font-size:28rpx;margin-left:10rpx;margin-right:10rpx;">标记</button>
+      <button bind:tap="restart" class="btn btn-restart" style="width:170rpx;font-size:28rpx;">重置</button>
+    </view>
+
+    <view class="mine-panel">
+      <view class="mine-panel-row" wx:for="{{cells}}" wx:for-item="cellRow" wx:for-index="y" wx:key="cellRow">
+        <view wx:for="{{cellRow}}" wx:for-item="cell" wx:for-index="x" wx:key="cell" class="mine-cell">
+
+          <!-- Init -->
+          <view wx:if="{{cell.cellDisplayType === 'init'}}"
+            class="mine-cover"
+            data-coordinate-x="{{x}}" data-coordinate-y="{{y}}"
+            catch:tap="onCellClick"
+            catch:longpress="bindLongPress"
+          ></view>
+          
+          <!-- Image -->
+          <image wx:elif="{{cell.cellDisplayType === 'flag' || cell.cellDisplayType === 'mine' || cell.cellDisplayType === 'explosion'}}"
+            class="mine-cell-image"
+            src="{{cell.cellDisplayType === 'mine' ? '/assets/mine.png' : cell.cellDisplayType === 'flag' ? '/assets/flag.png' : '/assets/mine_bang.png'}}"
+            mode="aspectFill"
+            data-coordinate-x="{{x}}" data-coordinate-y="{{y}}"
+            catch:tap="onCellClick"
+          >
+          </image>
+
+          <!-- Text(or empty) -->
+          <text wx:if="{{cell.cellDisplayType === 'number' || cell.cellDisplayType === 'empty'}}"
+            class="mine-number mine-number-{{cell.minesAroundCount}}"
+          >{{cell.minesAroundCount > 0 ? cell.minesAroundCount : ''}}</text>
+
+        </view>
+      </view>
+
+    </view>
+
+    <text class="" selectable="false" space="false" decode="false">剩余地雷： {{surplus}} 个</text>
+
+  </view>
+
+  <image class="music-img {{playing == null ? '' : 'music-img-playing'}}" src="/assets/music.jpg" mode="respecToFill" bindtap="bgmToogle" style="index:10;"></image>
+</view>

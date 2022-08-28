@@ -1,0 +1,54 @@
+/**index.wxss**/
+.container {
+  background-color: #E6E6E6;
+}
+
+
+
+.game-pnl {
+  height:140rpx;
+  width: 100%;
+  background-color: #3f31b8;
+  color: rgb(25, 216, 25);
+  display: flex;
+  justify-content: center ;
+  bottom: 150rpx;
+  position: absolute;
+}
+
+.game-txt {
+  font-size: medium;
+  font-weight: bold;
+  vertical-align: middle;
+  align-self: center;
+  text-align: center;
+
+}
+
+
+
+
+
+
+.bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  z-index:-1;
+  }
+  
+  .bg-img{
+      width : 100%;
+      height : 100%;
+  }
+
+.foot-auth {
+  color: rgb(189, 192, 32);
+  font-size: small;
+  margin-bottom: 0;
+  bottom: 0;
+  position: absolute;
+}

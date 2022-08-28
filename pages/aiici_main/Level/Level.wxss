@@ -1,0 +1,16 @@
+/**Level.wxss**/
+
+.btn {
+  background-color: #5245c5;
+  border-left: 2px solid rgb(255, 255, 255);
+  border-top: 2px solid rgb(197, 221, 186);
+  border-right: 2px solid darkgray;
+  border-bottom: 2px solid darkgray;
+  border-radius: 30rpx;
+  margin-bottom: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 180px;
+  position: relative;
+}

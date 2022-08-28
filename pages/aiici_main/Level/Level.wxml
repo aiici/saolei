@@ -1,0 +1,9 @@
+<!--Level.wxml-->
+<view class="container">
+  <image class="bg-img" src="/assets/bg.jpg" style="height: 100%;" mode="scaleToFill"></image> 
+  <view class="main">
+    <button class="btn" style="height: 120rpx;" bind:tap="Level" data-level="simple">简 单</button>
+    <button class="btn" style="height: 120rpx;" bind:tap="Level" data-level="difficult">一 般</button>
+    <button class="btn" style="height: 120rpx;" bind:tap="Level" data-level="terrible">困 难</button>
+  </view>
+</view>

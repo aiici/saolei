@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="game-pnl" bindtap="moveToGame">
+    <view class="bg">
+    <image class="bg-img" src="/assets/bg.jpg" style="height: 100%;" mode="scaleToFill"></image> </view>
+    <text class="game-txt">经 典 扫 雷 游 戏 
+       点 击 开 始</text>
+  </view>
+  <text class="foot-auth">AiiCi | AsNIT</text>
+</view>
